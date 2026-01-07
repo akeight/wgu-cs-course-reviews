@@ -5,7 +5,7 @@ WORKDIR /app
 # Install dependencies in production mode using npm + package-lock
 COPY package.json package-lock.json ./
 ENV NODE_ENV=production
-RUN npm ci --omit=dev
+RUN npm install --omit=dev
 
 # Copy source
 COPY . .
