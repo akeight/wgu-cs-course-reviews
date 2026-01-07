@@ -3,3 +3,5 @@ steps:
   args: ['build','-t','gcr.io/$PROJECT_ID/wgu-server:$SHORT_SHA','-f','monorepo/apps/server/Dockerfile','monorepo/apps/server']
 images:
 - gcr.io/$PROJECT_ID/wgu-server:$SHORT_SHA
+options:
+  logging: CLOUD_LOGGING_ONLY
