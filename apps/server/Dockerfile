@@ -5,7 +5,8 @@ WORKDIR /app
 # Install dependencies in production mode using npm + package-lock
 COPY package.json package-lock.json ./
 ENV NODE_ENV=production
-RUN npm install --omit=dev
+# Lockfile appears incompatible with npm in this context; install without lock
+RUN npm install --omit=dev --no-package-lock
 
 # Copy source
 COPY . .
