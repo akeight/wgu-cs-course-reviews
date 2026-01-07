@@ -1,6 +1,6 @@
 steps:
 - name: gcr.io/cloud-builders/docker
-  args: ['build','-t','gcr.io/$PROJECT_ID/wgu-server:$SHORT_SHA','-f','monorepo/apps/server/Dockerfile','monorepo/apps/server']
+  args: ['build','-t','gcr.io/$PROJECT_ID/wgu-server:$SHORT_SHA','-f','apps/server/Dockerfile','apps/server']
 images:
 - gcr.io/$PROJECT_ID/wgu-server:$SHORT_SHA
 options:
