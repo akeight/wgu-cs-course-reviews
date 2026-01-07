@@ -2,13 +2,10 @@ FROM node:22-alpine
 
 WORKDIR /app
 
-# Enable pnpm via corepack (included with recent Node images)
-RUN corepack enable
-
-# Install dependencies in production mode using the lockfile
-COPY package.json pnpm-lock.yaml ./
+# Install dependencies in production mode using npm + package-lock
+COPY package.json package-lock.json ./
 ENV NODE_ENV=production
-RUN pnpm install --frozen-lockfile --prod
+RUN npm ci --omit=dev
 
 # Copy source
 COPY . .
