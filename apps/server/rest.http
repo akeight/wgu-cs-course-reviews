@@ -1,0 +1,57 @@
+@baseURL = http://localhost:3000/api
+@courseId = 1
+@reviewId = 1
+
+### Get All Courses
+GET {{baseURL}}/courses
+Accept: application/json
+
+### Get Course By Id
+GET {{baseURL}}/courses/{{courseId}}
+Accept: application/json
+
+### Create Review For a Course
+POST {{baseURL}}/courses/{{courseId}}/reviews
+Content-Type: application/json
+
+{
+  "rating": 5,
+  "difficulty": 3,
+  "hours_per_week": 6,
+  "review_text": "Great intro course!"
+}
+
+### Get All Reviews For a Course
+GET {{baseURL}}/courses/{{courseId}}/reviews
+Accept: application/json
+
+### Get a Review by Id
+GET {{baseURL}}/reviews/{{reviewId}}
+Accept: application/json
+
+### Update a Review
+PUT {{baseURL}}/reviews/{{reviewId}}
+Content-Type: application/json
+
+{
+  "rating": 4,
+  "difficulty": 2,
+  "hours_per_week": 5,
+  "review_text": "Updated: still great, manageable workload."
+}
+
+### Delete a Review
+DELETE {{baseURL}}/reviews/5
+
+### Create a resource for a course
+POST {{baseURL}}/courses/{{courseId}}/resources
+Content-Type: application/json
+
+{
+  "title": "Created a new resource!",
+  "url": "https://testResource.com"
+}
+
+### Get All Resources For a Course
+GET {{baseURL}}/courses/{{courseId}}/resources
+Accept: application/json
