@@ -1,0 +1,5 @@
+steps:
+- name: gcr.io/cloud-builders/docker
+  args: ['build','-t','gcr.io/$cs-course-explorer/wgu-server:$SHORT_SHA','-f','monorepo/apps/server/Dockerfile','monorepo/apps/server']
+images:
+- gcr.io/$cs-course-explorer/wgu-server:$SHORT_SHA
