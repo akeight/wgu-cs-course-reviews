@@ -17,7 +17,7 @@ app.set('trust proxy', 1)
 
 const allowedOrigins = [
   'http://localhost:5173',
-  'https://wgu-cs-course-reviews-client.vercel.app',
+  'https://wgu-cs-course-reviews.vercel.app',
   ...(process.env.CORS_ORIGINS ? process.env.CORS_ORIGINS.split(',') : [])
 ]
 
