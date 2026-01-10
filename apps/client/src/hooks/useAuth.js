@@ -13,25 +13,41 @@ export function useAuth() {
   const checkAuth = async () => {
     try {
       const response = await fetch(API_ENDPOINTS.AUTH.ME, {
-        credentials: 'include', // Important: include cookies
-      })
-      const data = await response.json()
-      
-      if (data.authenticated) {
-        setUser(data.user)
-        setAuthenticated(true)
+        credentials: "include",
+        headers: { Accept: "application/json" },
+      });
+  
+      if (!response.ok) {
+        setUser(null);
+        setAuthenticated(false);
+        return;
+      }
+  
+      const contentType = response.headers.get("content-type") || "";
+      if (!contentType.includes("application/json")) {
+        const text = await response.text();
+        throw new Error(
+          `Auth endpoint did not return JSON. status=${response.status} content-type=${contentType} body=${text.slice(0, 120)}`
+        );
+      }
+  
+      const data = await response.json();
+  
+      if (data?.authenticated) {
+        setUser(data.user);
+        setAuthenticated(true);
       } else {
-        setUser(null)
-        setAuthenticated(false)
+        setUser(null);
+        setAuthenticated(false);
       }
     } catch (error) {
-      console.error('Auth check failed:', error)
-      setUser(null)
-      setAuthenticated(false)
+      console.error("Auth check failed:", error);
+      setUser(null);
+      setAuthenticated(false);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   const logout = async () => {
     try {
