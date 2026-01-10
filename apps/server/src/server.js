@@ -47,34 +47,24 @@ app.use(express.urlencoded({ extended: true }))
 app.use(morgan('tiny'))
 
 // Session configuration - MUST come before Passport
+const isProd = process.env.NODE_ENV === "production";
+
+// IMPORTANT for Cloud Run / proxies, otherwise secure cookies may never set
+app.set("trust proxy", 1);
+
 app.use(
   session({
-    secret: process.env.SESSION_SECRET || 'your-secret-key-change-this-in-production',
+    secret: process.env.SESSION_SECRET || "your-secret-key-change-this-in-production",
     resave: false,
     saveUninitialized: false,
     cookie: {
-      secure: true, // Always true for Render (uses HTTPS)
+      secure: isProd,          // true in prod (HTTPS), false locally
       httpOnly: true,
-      maxAge: 24 * 60 * 60 * 1000, // 24 hours
-      sameSite: 'none', // Required for cross-origin cookies (frontend on different domain)
+      maxAge: 24 * 60 * 60 * 1000,
+      sameSite: "lax",         // ✅ best when using /api proxy on same site
     },
   })
-)
-
-const isProd = process.env.NODE_ENV === 'production'
-app.use(
-  session({
-  secret: process.env.SESSION_SECRET || 'your-secret-key-change-this-in-production',
-  resave: false,
-  saveUninitialized: false,
-  cookie: {
-    secure: isProd,
-    httpOnly: true,
-    maxAge: 24 * 60 * 60 * 1000,
-    sameSite: isProd ? 'none' : 'lax',
-  },
-})
-)
+);
 
 // Initialize Passport - MUST come after Session
 app.use(passport.initialize())

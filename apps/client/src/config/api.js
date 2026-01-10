@@ -1,6 +1,8 @@
 // API configuration
-// export const API_BASE_URL = process.env.VITE_API_URL || 'http://localhost:3000'
-export const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000'
+const DEV_BASE = import.meta.env.VITE_API_URL || "http://localhost:3000";
+
+// In production, use same-origin so Vercel can proxy (/api -> Cloud Run)
+export const API_BASE_URL = import.meta.env.PROD ? "" : DEV_BASE;
 
 export const API_ENDPOINTS = {
   AUTH: {
@@ -8,5 +10,5 @@ export const API_ENDPOINTS = {
     ME: `${API_BASE_URL}/api/auth/me`,
     LOGOUT: `${API_BASE_URL}/api/auth/logout`,
   },
-}
+};
 
