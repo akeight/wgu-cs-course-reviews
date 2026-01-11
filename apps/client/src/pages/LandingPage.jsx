@@ -52,13 +52,13 @@ export default function LandingPage() {
       <Header />
 
       <main className="container mx-auto px-4 py-16">
-        <div className="max-w-4xl mx-auto text-center space-y-6">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm">
+        <div className="max-w-4xl mx-auto text-center space-y-6 animate-in fade-in duration-500 ease-out">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm animate-in slide-in-from-top-2 fade-in delay-75 duration-500 ease-out">
             <TrendingUp className="w-4 h-4" />
             <span>Join WGU CS students sharing knowledge</span>
           </div>
 
-          <h1 className="scroll-m-20 text-center text-5xl font-extrabold tracking-tight text-balance">
+          <h1 className="scroll-m-20 text-center text-5xl font-extrabold tracking-tight text-balance animate-in fade-in zoom-in-95 duration-700 delay-150 ease-out">
             Your One-Stop Hub for
             <br />
             <span className="bg-gradient-to-r from-gray-700 to-gray-400 bg-clip-text text-transparent">
@@ -66,17 +66,17 @@ export default function LandingPage() {
             </span>
           </h1>
 
-          <p className="scroll-m-20 text-center text-xl tracking-loose leading-tight text-muted-foreground max-w-2xl mx-auto">
+          <p className="scroll-m-20 text-center text-xl tracking-loose leading-tight text-muted-foreground max-w-2xl mx-auto animate-in fade-in-0 duration-600 delay-200 ease-out">
             Stop searching through Reddit, Discord, and Facebook. Find honest
             reviews, ratings, study resources, and time estimates all in one
             place.
           </p>
 
-          <div className="flex gap-4 justify-center pt-4">
+          <div className="flex gap-4 justify-center pt-4 animate-in zoom-in-95 duration-600 delay-250 ease-out">
             <Button 
               onClick={handleLogin}
               size="lg"
-              className="gap-2 hover:cursor-pointer"
+              className="gap-2 hover:cursor-pointer animate-in slide-in-from-bottom-2 fade-in duration-500 delay-150 ease-out hover:bg-blue-800 hover:text-white"
             >
               <Github className="w-5 h-5" />
               Continue with GitHub
@@ -90,7 +90,7 @@ export default function LandingPage() {
 
         {/* Features Grid */}
         <div className="grid md:grid-cols-3 gap-6 mt-20 max-w-5xl mx-auto">
-          <Card>
+          <Card className="animate-in slide-in-from-left-2 fade-in duration-500 delay-150 ease-out">
             <CardContent className="p-6 space-y-3">
               <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
                 <Star className="w-6 h-6 text-gray-700" />
@@ -103,7 +103,7 @@ export default function LandingPage() {
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className="animate-in fade-in slide-in-from-bottom-2 duration-500 delay-200 ease-out">
             <CardContent className="p-6 space-y-3">
               <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
                 <BookOpen className="w-6 h-6 text-gray-700" />
@@ -116,7 +116,7 @@ export default function LandingPage() {
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className="animate-in slide-in-from-right-2 fade-in duration-500 delay-250 ease-out">
             <CardContent className="p-6 space-y-3">
               <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
                 <Users className="w-6 h-6 text-gray-700" />
@@ -131,7 +131,7 @@ export default function LandingPage() {
         </div>
 
         {/* CTA Section */}
-        <div className="mt-20 text-center">
+        <div className="mt-20 text-center animate-in fade-in zoom-in-95 duration-600 delay-300 ease-out">
           <div className="inline-block bg-gradient-to-r from-blue-800 to-blue-900 opacity-90 p-8 rounded-2xl text-white">
             <h2 className="scroll-m-20 text-2xl font-semibold tracking-tight text-white mb-3">Ready to get started?</h2>
             <p className="text-blue-100 mb-6 max-w-md">
