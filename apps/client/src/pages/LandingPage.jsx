@@ -58,7 +58,7 @@ export default function LandingPage() {
             <span>Join WGU CS students sharing knowledge</span>
           </div>
 
-          <h1 className="text-5xl">
+          <h1 className="scroll-m-20 text-center text-5xl font-extrabold tracking-tight text-balance">
             Your One-Stop Hub for
             <br />
             <span className="bg-gradient-to-r from-gray-700 to-gray-400 bg-clip-text text-transparent">
@@ -66,7 +66,7 @@ export default function LandingPage() {
             </span>
           </h1>
 
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="scroll-m-20 text-center text-xl tracking-loose leading-tight text-muted-foreground max-w-2xl mx-auto">
             Stop searching through Reddit, Discord, and Facebook. Find honest
             reviews, ratings, study resources, and time estimates all in one
             place.
@@ -83,7 +83,7 @@ export default function LandingPage() {
             </Button>
           </div>
 
-          <p className="text-sm text-muted-foreground">
+          <p className="scroll-m-20 text-center text-sm tracking-loose leading-tight text-muted-foreground ">
             Free forever. No credit card required.
           </p>
         </div>
@@ -95,8 +95,8 @@ export default function LandingPage() {
               <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
                 <Star className="w-6 h-6 text-gray-700" />
               </div>
-              <h3 className="text-lg font-medium">Honest Reviews</h3>
-              <p className="text-muted-foreground">
+              <h3 className="scroll-m-20 text-lg font-medium tracking-tight">Honest Reviews</h3>
+              <p className="scroll-m-20 text-sm tracking-loose leading-tight text-muted-foreground">
                 Read detailed reviews from students who've completed the
                 courses. Real experiences, real insights.
               </p>
@@ -108,8 +108,8 @@ export default function LandingPage() {
               <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
                 <BookOpen className="w-6 h-6 text-gray-700" />
               </div>
-              <h3>Study Resources</h3>
-              <p className="text-muted-foreground">
+              <h3 className="scroll-m-20 text-lg font-medium tracking-tight">Study Resources</h3>
+              <p className="scroll-m-20 text-sm tracking-loose leading-tight text-muted-foreground">
                 Access curated study materials, helpful links, and resources
                 shared by successful students.
               </p>
@@ -121,8 +121,8 @@ export default function LandingPage() {
               <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
                 <Users className="w-6 h-6 text-gray-700" />
               </div>
-              <h3>Community Driven</h3>
-              <p className="text-muted-foreground">
+              <h3 className="scroll-m-20 text-lg font-medium tracking-tight">Community Driven</h3>
+              <p className="scroll-m-20 text-sm tracking-loose leading-tight text-muted-foreground">
                 Upvote helpful reviews, contribute your own experiences, and
                 help future students succeed.
               </p>
@@ -132,8 +132,8 @@ export default function LandingPage() {
 
         {/* CTA Section */}
         <div className="mt-20 text-center">
-          <div className="inline-block bg-linear-to-r from-blue-800 to-blue-900 p-8 rounded-2xl text-white">
-            <h2 className="text-white mb-3">Ready to get started?</h2>
+          <div className="inline-block bg-gradient-to-r from-blue-800 to-blue-900 opacity-90 p-8 rounded-2xl text-white">
+            <h2 className="scroll-m-20 text-2xl font-semibold tracking-tight text-white mb-3">Ready to get started?</h2>
             <p className="text-blue-100 mb-6 max-w-md">
               Join thousands of WGU CS students making informed course decisions
             </p>
@@ -152,7 +152,7 @@ export default function LandingPage() {
 
       {/* Footer */}
       <footer className="border-t mt-20 py-7 bg-white/50">
-        <div className="container mx-auto px-3 text-center text-sm text-muted-foreground">
+        <div className="container mx-auto px-3 text-center text-sm tracking-loose leading-tight text-muted-foreground">
           <p>Made with ❤️💻 by WGU CS students, for WGU CS students</p>
           <p className="mt-2">
             Not affiliated with Western Governors University

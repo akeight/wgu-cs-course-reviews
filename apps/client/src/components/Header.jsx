@@ -42,7 +42,7 @@ export default function Header() {
               </Button>
             )}
             <div className="w-10 h-10 bg-linear-to-br from-blue-600 to-blue-900 rounded-lg flex items-center justify-center">
-              <span className="text-white hover:cursor-default">W</span>
+              <span className="text-white hover:cursor-default text-2xl font-bold scroll-m-20">W</span>
             </div>
             <div>
               <span
@@ -54,7 +54,7 @@ export default function Header() {
           </div>
 
           <div className="flex items-center gap-2">
-            <nav className="hidden sm:flex items-center gap-3">
+            <nav className="flex items-center gap-3">
               {/* <Button variant="ghost" asChild>
                 <Link to="/courses">All Courses</Link>
               </Button> */}

@@ -13,7 +13,7 @@ function CourseListing({ courses, onCourseClick }) {
   //   return <CourseCardSkeleton />
   // }
   return (
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
       {courses.map(course => (
         <CourseCard
           key={course.id}
